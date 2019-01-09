@@ -4,7 +4,10 @@
   "description": "Basic setup for an application using the MERN stack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server",
+    "build:dev": "webpack -w --mode development",
+    "build": "webpack -w --mode production"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,30 @@
   "bugs": {
     "url": "https://github.com/jmetz93/mern-stack-skeleton/issues"
   },
-  "homepage": "https://github.com/jmetz93/mern-stack-skeleton#readme"
+  "homepage": "https://github.com/jmetz93/mern-stack-skeleton#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "helmet": "^3.15.0",
+    "mongodb": "^3.1.10",
+    "nodemon": "^1.18.9",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.28.1",
+    "webpack-cli": "^3.2.1"
+  }
 }
