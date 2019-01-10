@@ -4,6 +4,9 @@ const express = require('express');
 const parser = require('body-parser');
 const path = require('path');
 
+// intialize database
+require('../db/config');
+
 // const { router } = require('../router/appRouter');
 
 // security for server
@@ -23,9 +26,6 @@ app.use(express.static(path.join(__dirname, '../static')));
 
 // app.use('/api', router);
 
-app.listen(PORT, err => {
-  if (err) {
-    console.log('error connecting to server: ', err);
-  }
-  console.log(`Listening on PORT: ${PORT}`);
-});
+app.listen(process.env.PORT, err => {
+  err ? console.log('Failed to start server') : console.log('Listening on port: ', PORT);
+})
