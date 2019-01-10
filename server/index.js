@@ -7,7 +7,7 @@ const path = require('path');
 // intialize database
 require('../db/config');
 
-// const { router } = require('../router/appRouter');
+const { router } = require('./router');
 
 // security for server
 const helmet = require('helmet');
@@ -24,7 +24,7 @@ app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../static')));
 
-// app.use('/api', router);
+app.use('/api', router);
 
 app.listen(process.env.PORT, err => {
   err ? console.log('Failed to start server') : console.log('Listening on port: ', PORT);
