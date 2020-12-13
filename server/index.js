@@ -17,12 +17,12 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT;
 
-app.use(helmet());
-app.use(cors());
+// app.use(helmet());
+// app.use(cors());
 
 app.use(parser.json());
 app.use(parser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../static')));
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.use('/api', router);
 
